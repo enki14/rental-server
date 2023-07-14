@@ -1,0 +1,16 @@
+@use "../foundation/mixin";
+@use "../foundation/base";
+
+
+.l-footer{
+    background: #EEEEEE;
+    padding-top: 6.4rem;
+    &__inner{
+        display: flex;
+        justify-content: center;
+        gap: 6rem;
+        flex-wrap: wrap;
+        margin-bottom: 6rem;
+
+    }
+}

@@ -1,0 +1,96 @@
+@use "../foundation/mixin";
+@use "../foundation/base";
+
+
+
+.l-overview{
+    padding: 97px 0 80px;
+    &__inner{
+        margin: 0 auto;
+        width: 996px;
+    }
+}
+
+.l-feature{
+    padding: 67px 0 120px;
+    &__inner{
+        margin: 0 auto;
+        width: 640px;
+    }
+}
+
+.l-apply{
+    padding: 6rem 0;
+    background: base.$lightBlue;
+    &__inner{
+        margin: 0 auto;
+        width: 615px;
+    }
+}
+
+.l-comparison{
+    padding: 97px 0 80px;
+    &__inner{
+        margin: 0 auto;
+        width: 954px;
+    }
+}
+
+.l-flow{
+    position: relative;
+    padding: 60px 0 120px;
+    &::after{
+        @include mixin.background_url('pc/l-flow_bg.png', 100%, 100%);
+        position: absolute;
+        background-size: cover;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+    &__inner{
+        margin: 0 auto;
+        width: 790px;
+    }
+}
+
+.l-easy{
+    padding: 80px 0;
+    &__inner{
+        margin: 0 auto;
+        width: 960px;
+    }
+}
+
+.l-faq{
+    padding: 80px 0 120px;
+    &__inner{
+        margin: 0 auto;
+        width: 860px;
+    }
+}
+
+
+
+/***************************************************************/
+/*********************** メディアクエリ(tab) ********************/ 
+/***************************************************************/
+@include mixin.mq(tab){
+    .l-overview{
+        padding: 74px 0 60px;
+    }
+
+    .l-feature{
+        padding: 43px 0 100px;
+        &__inner{
+            width: 93.9%;
+        }
+    }
+    .l-comparison{
+        padding: 74px 0 60px;
+        &__inner{
+            width: 84.9%;
+        }
+    }
+}
+
+

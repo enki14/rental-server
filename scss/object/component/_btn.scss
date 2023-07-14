@@ -1,0 +1,169 @@
+@use "../../foundation/mixin";
+@use "../../foundation/base";
+
+
+
+
+.c-applyBtn{
+    display: inline-block;
+    color: #fff;
+    background: base.$pink;
+    border: 1px solid base.$pink_hover;
+    transition: .3s;
+    padding: 20px 80px 24px 80px;;
+    font-size: base.$font24;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 auto;
+    &:hover{
+        background: base.$pink_hover;
+    }
+}
+
+.applyBtn_nav{
+    padding: 16px 2.9vw 20px;
+    font-size: 1.4vw;
+}
+
+.c-supportBtn{
+    display: inline-block;
+    color: #fff;
+    padding: 16px 40px 20px;
+    text-shadow: 1px 1px 0 base.$gray;
+    background: base.$yellow;
+    border: 1px solid #B4B648;
+    transition: .3s;
+    font-size: base.$font20;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0 auto;
+    &:hover{
+        background: base.$yellow_hover;
+    }
+}
+
+.supportBtn_nav{
+    padding: 16px 2.9vw 20px;
+    border: none;
+    font-size: 1.4vw;
+
+}
+
+.fSupo-btn{
+    padding: 20px 56px 24px;    
+    font-size: base.$font24;
+    line-height: 2.4rem;
+}
+
+.c-tableBtn{
+    text-align: center;
+    padding: 18px 0 22px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 1px solid base.$gray;
+    border-right: 1px solid base.$gray;
+    border-bottom: 1px solid base.$gray;
+
+    a{
+        display: inline-block;
+        padding: 8px 32px 10px;
+        color: #fff;
+        background: #666666;
+        opacity: 40%;
+        transition: .3s;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        &:hover{
+            opacity: 91%;
+        }
+    
+    }
+}
+
+.c-question{
+    position: relative;
+    display: flex;
+    padding: 24px 40px;
+    align-items: center;
+    gap: 24px;
+    border-radius: 20px;
+    background: base.$lightBlue;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    &::before{
+        @include mixin.background_url('pc/question.svg', 32px, 21.4px);
+        position: absolute;
+        top: 3.83rem;
+        left: 4rem;
+    }
+
+    p{
+        width: 706px;
+        line-height: 28.8px;
+        padding-left: 5.6rem;
+    }
+
+    .c-lamp{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background: #fff;
+        // 疑似要素で中に小さな円形を作成
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background: base.$lightBlue;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+}
+
+
+.c-anser{
+    position: relative;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -2.4rem;
+    word-break: break-word;
+    align-items: center;
+    border-radius: 0px 0px 20px 20px;
+    border: 2px solid base.$lightBlue;
+    padding: 0px 60px 0px 40px;  
+
+    &::before{
+        @include mixin.background_url('pc/anser.svg', 32px, 20.4px);
+        position: absolute;
+        top: 4.8rem;
+        left: 4rem;
+    }
+    p{
+        width: 100.4%;
+        line-height: 28.8px;
+        padding-left: 5.6rem;
+
+    }
+}
+
+
+
+/***************************************************************/
+/*********************** メディアクエリ(tab) ********************/ 
+/***************************************************************/
+@include mixin.mq(tab){
+    .tabApply-btn{
+        padding: 16px 60px 20px;
+    }
+    
+    .tabSupo-btn{
+        padding: 16px 32px 20px;
+    }
+}

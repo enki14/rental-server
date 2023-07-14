@@ -1,0 +1,166 @@
+@use "../../foundation/mixin";
+@use "../../foundation/base";
+
+
+.c-navLogo{
+    width: 33.3%;
+    a{
+        img{
+            width: 183px;
+            height: 42px;
+        }
+    }
+} 
+
+.c-overDesc{
+    width: 100%;
+    position: absolute;
+    top: 17px;
+    height: 217px;
+    img{
+        position: absolute;
+        width: calc(100% + 90px);
+        left: -90px;
+        object-fit: cover;
+    }
+}
+
+.c-featDesc{
+    width: 100%;
+    height: 278px;
+    position: relative;
+    img{
+        position: absolute;
+        width: calc(100% + 125px);
+        height: 254.5px;
+        left: -125px;
+        object-fit: cover;
+        top: 2.4rem;
+    }
+}
+
+.c-leftImg{
+    width: 300px;
+    height: 228px;
+}
+
+.c-click{
+    width: 80px;
+    height: 60px;
+}
+
+.c-spWoman{
+    width: 60px;
+    height: 86px;
+}
+
+.c-menWoman{
+    width: 120px;
+    height: 90px;
+}
+
+.c-pay{
+    width: 149px;
+    height: 75px;
+}
+
+.c-gatsPortz{
+    width: 117px;
+    height: 107px;
+}
+
+.c-logo{
+    display: block;
+    padding-top: 1.6rem;
+    margin-bottom: 6.4rem;
+    img{
+        width: 100%;
+        height: 46px;
+        object-fit: cover;
+    }
+}
+
+.c-item_1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+    .twitter{
+        width: 24px;
+        height: 19.5px;
+    }
+}
+.c-item_2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+    margin-bottom: 2rem;
+    .youtube{
+        width: 24px;
+        height: 16.8px;
+    }
+    .facebook{
+        width: 24px;
+        height: 24px;
+    }
+}
+.c-item_3{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3.2rem;
+    .line{
+        width: 24px;
+        height: 23px;
+    }
+    .linkedin{
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.c-rental{
+    width: 118px;
+    height: 24px;
+    object-fit: contain;
+}
+.c-vps{
+    width: 40px;
+    height: 24px;
+    object-fit: contain;
+
+}
+.c-heiper{
+    width: 115px;
+    height: 24px;
+    object-fit: contain;
+}
+.c-gaming{
+    width: 150px;
+    height: 24px;
+    object-fit: contain;
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(tab) ********************/ 
+/***************************************************************/
+@include mixin.mq(tab){
+    .c-overDesc{
+        top: 148px;
+        img{
+            width: 88.3%;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    } 
+    .c-featDesc{
+        img{
+            position: relative;
+            width: 88.3%;
+            left: 0;
+            object-fit: contain;
+        }
+    }
+}

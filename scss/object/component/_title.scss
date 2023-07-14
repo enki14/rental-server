@@ -1,0 +1,136 @@
+@use "../../foundation/mixin";
+@use "../../foundation/base";
+
+.c-navTitle{
+    img{
+        // width: 331px;
+        // height: 45px;
+        width: 24.2vw;
+        object-fit: cover;
+    }
+}
+
+.c-mainTitle{
+    img{
+        width: 772px;
+        height: 306px;
+        height: auto;
+    }
+
+}
+
+.c-h2{
+    position: relative;
+    display: inline;
+
+    &::before{
+        position: absolute;
+        content: '';
+        display: block;
+        height: 5px;
+        border-radius: 2.5px;
+        width: 160px;
+        bottom: -1.2rem;
+        z-index: 3;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: base.$mosBlue;
+    }
+    &::after{
+        position: absolute;
+        content: '';
+        display: block;
+        height: 5px;
+        border-radius: 2.5px;
+        width: 104%;
+        bottom: -1.2rem;
+        left: -2%;
+        background: base.$gray;
+    }
+}
+
+.c-h2B{
+    position: relative;
+    display: inline;
+    line-height: 66px;
+    &::after{
+        @include mixin.background_url('pc/bamboo.svg', 130px, 100%);
+        position: absolute;
+        top: 0;
+        left: -2.8rem;
+        z-index: -1;
+    }
+}
+
+.c-h2C{
+    display: inline;
+    line-height: 1.6;
+}
+
+.c-applyTitle{
+    text-align: center;
+    margin-bottom: 4rem;
+    img{
+        width: 483px;
+        height: 61.5px;
+        object-fit: cover;
+    }
+}
+
+.c-titleDesc{
+    width: 614px;
+    margin-bottom: 4rem;
+    h3{
+        margin-bottom: 2.4em;
+        .c-h3Comp{
+            width: 555px;
+            height: 70px;
+        }
+    } 
+    p{
+        width: 100%;
+        line-height: 28.8px;
+        letter-spacing: 2.4px;
+    }
+}
+
+.ttlDesc_vertical{
+    margin-bottom: 0;
+}
+
+.c-fukidashi{
+    position: absolute;
+    width: 420px;
+    height: 149.5px;
+    top: 0;
+    left: 4.2rem;
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(tab) ********************/ 
+/***************************************************************/
+@include mixin.mq(tab){
+
+    .c-navTitle{
+        img{
+            width: 288px;
+            height: 45px;
+        }
+    }
+
+    .c-mainTitle{
+        img{
+            width: 579px;
+            height: 230px;
+        }
+    }
+
+    .c-titleDesc{
+        width: 100%;
+        p{
+            letter-spacing: 0;
+        }
+    }
+}

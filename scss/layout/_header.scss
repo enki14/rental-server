@@ -1,0 +1,39 @@
+@use "../foundation/mixin";
+@use "../foundation/base";
+
+.l-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 60px;
+
+}
+
+.l-header{
+    // メインビジュアル
+    position: relative;
+    @include mixin.background_url('pc/header_img.png', 100%, 100vh);
+    background-repeat: no-repeat; 
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    overflow: hidden;
+    &__inner{
+        @include mixin.cross_center;
+        width: 100%;
+        height: 100%;
+       
+    }
+
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(tab) ********************/ 
+/***************************************************************/
+@include mixin.mq(tab){
+    .l-header{
+        height: 463px;
+        
+    }
+}

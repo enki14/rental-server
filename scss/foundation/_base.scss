@@ -1,0 +1,153 @@
+@use "mixin";
+
+$pink: #FFB7C8;
+$pink_hover: #C78897;
+$yellow: #E7EA5C;
+$yellow_hover: #B4B648;
+$lightBlue: #BBE5E5;
+$mosBlue: #7FBABA;
+$gray: #bdbdbd;
+
+$font42: clamp(2.4rem, 1.849rem + 2.75vw * 0.625, 4.2rem);
+$font32: clamp(2rem, 1.633rem + 1.84vw * 0.625, 3.2rem);
+$font24: clamp(1.8rem, 1.616rem + 0.92vw * 0.625, 2.4rem);
+$font20: clamp(1.6rem, 1.478rem + 0.61vw * 0.625, 2rem);
+$font18: clamp(1.4rem, 1.278rem + 0.61vw * 0.625, 1.8rem);
+
+html{
+    font-size: 62.5%;
+    // overflow:auto;
+   
+}
+
+// noto sans jpを読み込む
+// 参考：https://gist.github.com/manabuyasuda/b5c867a7cbd17d1eb905b3a8cfd621a6
+html[lang="ja"] {
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    color: #000;
+}
+
+
+body{
+    
+
+    .pc{
+        display: block;
+    }
+    .tab{
+        display: none;
+    }
+    .sp{
+        display: none;
+    }
+    .pc_tab{
+        display: block;
+    }
+    .tab_sp{
+        display: none;
+    }
+    .pc_flex{
+        display: flex;
+    }
+
+    h2{
+        font-size: $font42;
+        line-height: 1;
+        text-align: center;
+    }
+
+    p,
+    a,
+    dt,
+    dd,
+    li,
+    span{
+        font-size: 1.6rem;
+        color: #000;
+        font-weight: 500;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    // テーブルの強調文字
+    .emphasis{
+        font-weight: 700;
+        font-size: $font18;
+        letter-spacing: 0.9px;
+        line-height: 1;
+    }
+
+    // テーブルのチェックマーク
+    .check{
+        width: 17.5px;
+    }
+
+    .mb-6{
+        margin-bottom: 6rem;
+    }
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(tab) ********************/ 
+/***************************************************************/
+@include mixin.mq(tab){
+    body{
+
+        .pc{
+            display: none;
+        }
+        .tab{
+            display: block;
+        }
+        .sp{
+            display: none;
+        }
+        .pc_tab{
+            display: block;
+        }
+        .tab_sp{
+            display: block;
+        }
+        .pc_flex{
+            display: none;
+        }
+    }
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(sp) ********************/ 
+/***************************************************************/
+@include mixin.mq(sp){
+    body{
+
+        .pc{
+            display: none;
+        }
+        .tab{
+            display: none;
+        }
+        .sp{
+            display: block;
+        }
+        .pc_tab{
+            display: none;
+        }
+        .tab_sp{
+            display: block;
+        }
+
+    }
+}

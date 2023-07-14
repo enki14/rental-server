@@ -1,0 +1,74 @@
+@use "../../foundation/mixin";
+@use "../../foundation/base";
+
+
+.p-service{
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    padding-top: 1.6rem;
+
+    dl{
+        padding-left: 1.2rem;
+        position: relative;
+        &::before{
+            position: absolute;
+            content: '';
+            display: block;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 20px;
+            background: base.$gray;
+        }
+
+        dt{
+            margin-bottom: 1.6rem;
+            img{
+                vertical-align: top;
+            }
+        } 
+        dd{
+            &:not(:last-child){
+                margin-bottom: 8px;
+            }
+            a{
+                line-height: 150%;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.p-footerBtm{
+    padding: 1.6rem 0;
+    text-align: center;
+    background: #666666;
+    
+    &__list{
+        @include mixin.table_layout(2.4rem, 516px);
+        margin-bottom: 2.4rem;
+        li{
+            position: relative;
+            &:not(:last-child)::after{
+                position: absolute;
+                display: block;
+                content: '';
+                right: 0;
+                top: 0;
+                width: 1px;
+                height: 20px;
+                background: #fff;
+            }
+            a{
+                font-size: 1.4rem;
+                // yu cothicの組み合わせ
+                font-family: 'Yu Gothic', 'Yu Gothic Medium', 'Yu Gothic Regular', '游ゴシック', '游ゴシック体', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+                color: #fff;
+                line-height: 150%;
+                font-weight: 400;
+                width: 100%;
+            }
+        }
+    }
+}

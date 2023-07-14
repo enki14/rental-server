@@ -1,0 +1,138 @@
+@use "../../foundation/mixin";
+@use "../../foundation/base";
+
+.c-navSpan{
+    display: block;
+    color: #000;
+    text-align: center;
+    font-size: 1.4vw;
+    font-weight: 500;
+    line-height: 25.6px;
+    margin-bottom: 1.2rem;
+}
+
+.c-btnSpan{
+    position: relative;
+    display: block;
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 3.2rem;
+}
+
+.buttonSpan{
+    line-height: 2;
+
+    img{
+        position: absolute;
+        right: 43.4px;
+        bottom: 11.3px;
+    }
+}
+
+.c-band{
+    width: 100%;
+    padding: 16px 0;
+    background: base.$mosBlue;
+    p{
+        font-size: base.$font32;
+        line-height: 3.2rem;
+        text-align: center;
+        margin: 2.4rem 0;
+    }
+}
+
+.bandFooter{
+    padding: 16px 24px 20px;
+    p{
+        font-size: base.$font18;
+        line-height: 1.8rem;
+        margin: 8px 0;
+    }
+
+}
+
+.contentSpan{
+    line-height: 1;
+
+    img{
+        position: absolute;
+        right: 84px;
+        top: -1px;
+        width: 21px;
+        height: 25px;
+    }
+}
+
+.c-conditions{
+    margin-top: 6rem;
+    display: inline-block;
+    padding: 16px 40px 20px 40px;
+    border: 1px dashed #666;
+    color: #333;
+    font-size: base.$font20;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.c-flowDesc{
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 72px 60px 40px 40px;
+    align-items: center;
+    gap: 24px;
+    border-radius: 20px;
+    border: 2px solid #7FBABA;
+
+    &::after{
+        position: absolute;
+        @include mixin.background_url('pc/big_check.svg', 80px, 70px);
+        top: -3.5rem;
+        right: 11rem;
+    }
+
+    p{
+        line-height: 28.8px;
+    }
+}
+
+.c-midashiSpan{
+    display: block;
+    color: #FFB7C8;
+    // font-familyでpoller oneの組み合わせ
+    font-family: 'Poller One', cursive;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+.c-copyright{
+    font-size: 1.4rem;
+    // yu cothicの組み合わせ
+    font-family: 'Yu Gothic', 'Yu Gothic Medium', 'Yu Gothic Regular', '游ゴシック', '游ゴシック体', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+    color: #fff;
+    line-height: 150%;
+    font-weight: 400;
+    width: 100%;
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(tab) ********************/ 
+/***************************************************************/
+@include mixin.mq(tab){
+    .c-btnSpan{
+        font-size: 1.7rem;
+        margin-bottom: 1.6rem;
+    }
+    
+    .c-band p{
+        margin: 1.8rem 0;
+    }
+    .contentSpan{
+        font-size: 1.9rem;
+    }
+
+}
