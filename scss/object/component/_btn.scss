@@ -8,7 +8,8 @@
     display: inline-block;
     color: #fff;
     background: base.$pink;
-    border: 1px solid base.$pink_hover;
+    outline: 1px solid base.$pink_hover;
+    outline-offset: -1px;
     transition: .3s;
     padding: 20px 80px 24px 80px;;
     font-size: base.$font24;
@@ -31,7 +32,8 @@
     padding: 16px 40px 20px;
     text-shadow: 1px 1px 0 base.$gray;
     background: base.$yellow;
-    border: 1px solid #B4B648;
+    outline: 1px solid #B4B648;
+    outline-offset: -1px;
     transition: .3s;
     font-size: base.$font20;
     font-weight: 500;
@@ -83,6 +85,7 @@
 
 .c-question{
     position: relative;
+    justify-content: space-between;
     display: flex;
     padding: 24px 40px;
     align-items: center;
@@ -127,6 +130,7 @@
 }
 
 
+
 .c-anser{
     position: relative;
     height: 0;
@@ -155,6 +159,7 @@
 
 
 
+
 /***************************************************************/
 /*********************** メディアクエリ(tab) ********************/ 
 /***************************************************************/
@@ -166,4 +171,35 @@
     .tabSupo-btn{
         padding: 16px 32px 20px;
     }
+
+    .c-question p{
+        width: 75.5%;
+    }
+
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(sp) ********************/ 
+/***************************************************************/
+@include mixin.mq(sp){
+    .c-supportBtn{
+        line-height: 1.8rem;
+    }
+    .c-question{
+        p{
+            width: 86.9%;
+        }
+        .c-lamp{
+            width: 8%;
+            height: auto;
+            aspect-ratio: 1;
+            &::before{
+                width: 60%;
+                height: auto;
+                aspect-ratio: 1;
+            }
+        }
+    
+    } 
 }

@@ -1,32 +1,25 @@
 'use strict';
 
-// const shingleDown = (el) => {
-//     el.style.height = 'auto'; // 初期値が0にならないように一旦autoにする
-//     let h = el.offsetHeight; // 要素の高さを取得
-//     el.style.offsetHeight = h + 'px';
-//     el.animate([ // animate(keyframes, options)
-//         { height: '0px'},
-//         { height: h + 'px'}
-//     ], {
-//         duration: 300,
-//     });
-// }
+
+
 const shingleDown = (el) => {
     el.style.height = 'auto'; // 初期値が0にならないように一旦autoにする
-    el.style.transition = 'height 0s'; // アニメーションの適用を一時的に無効化
-    let h = el.scrollHeight; // 要素の高さを取得（コンテンツ全体の高さ）
-    let paddingTop = parseFloat(window.getComputedStyle(el).paddingTop);
-    let paddingBottom = parseFloat(window.getComputedStyle(el).paddingBottom);
-    h += paddingTop + paddingBottom; // paddingを高さに加算する
-    el.style.height = '0px'; // 高さを一時的に0にする
-    el.style.transition = ''; // アニメーションの適用を有効化
-    el.offsetHeight; // 要素の高さを再取得するためにリフローを発生させる
-    el.style.height = h + 'px'; // 高さを設定
-};
+    let h = el.offsetHeight; // 要素の高さを取得
+    el.style.offsetHeight = h + 'px';
+    el.animate([ // animate(keyframes, options)
+        { height: '0px'},
+        { height: h + 'px'}
+    ], {
+        duration: 300,
+    });
+    el.style.height = 'auto';
+}
+
 
 const shingleUp = (el) => {
     el.style.height = 0;
 }
+
 
 // querySelectorAllは配列ではなく、配列に似たオブジェクトである
 const acoShiBtns = document.querySelectorAll('.c-question');
@@ -55,3 +48,12 @@ acoShiBtns.forEach((acoShiBtn, index) => {
         });
     });
 });
+
+
+// window.addEventListener('resize', function() {
+//     var element = document.querySelector('.p-headOver');
+//     var width = element.offsetWidth;
+//     var aspectRatio = 712/473;
+//     var height = width / aspectRatio;
+//     element.style.height = height + 'px';
+//   });

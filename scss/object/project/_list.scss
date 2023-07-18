@@ -4,7 +4,8 @@
 
 .p-service{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 6rem;
     padding-top: 1.6rem;
 
@@ -46,15 +47,20 @@
     background: #666666;
     
     &__list{
-        @include mixin.table_layout(2.4rem, 516px);
+        display: flex;
+        justify-content: center;
+        width: auto;
+        flex-wrap: wrap;
+        gap: 1.2rem 2.4rem;
         margin-bottom: 2.4rem;
+        padding: 0 2rem;
         li{
             position: relative;
             &:not(:last-child)::after{
                 position: absolute;
                 display: block;
                 content: '';
-                right: 0;
+                right: -1.2rem;
                 top: 0;
                 width: 1px;
                 height: 20px;
@@ -68,6 +74,20 @@
                 line-height: 150%;
                 font-weight: 400;
                 width: 100%;
+                vertical-align: top;
+            }
+        }
+    }
+}
+
+/***************************************************************/
+/*********************** メディアクエリ(sp) ********************/ 
+/***************************************************************/
+@include mixin.mq(sp){
+    .p-service{
+        dl{
+            dd a{
+                font-size: 1.4rem;
             }
         }
     }

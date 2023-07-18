@@ -40,37 +40,40 @@
     margin-bottom: 6.4rem;
     p{
         margin-top: 6rem;
+        line-height: 180%;
     }
 }
 .p-headFaq{
     position: relative;
-    width: 510px;
+    display: flex;
+    // justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 59.3%;
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 6rem;
+    margin-bottom: 3.2rem;
     &::before{
-        position: absolute;
         content: '';
-        display: block;
-        top: 1.9rem;
-        width: 106px;
-        height: 2px;
+        width: 2px;
+        height: 106px;
         background: #000;
-        transform: rotate(50deg);
+        transform: rotate(-40deg);
         transform-origin: 0% 0%;
+        margin-right: 10rem;
+        margin-top: 5rem;
 
     }
     &::after{
-        position: absolute;
         content: '';
-        display: block;
-        top: 2rem;
-        right: -106px;
         background: #000;
-        width: 106px;
-        height: 2px;
-        transform: rotate(130deg);
+        width: 2px;
+        height: 106px;
+        transform: rotate(40deg);
         transform-origin: 0% 0%;
+        margin-left: 10rem;
+        margin-top: 5rem;
     }
 
 }
@@ -92,6 +95,7 @@
         .chart_1{
             width: 776px;
             height: 549px;
+            margin: 0 auto;
         }
 
     }
@@ -99,6 +103,7 @@
         .chart_2{
             width: 870x;
             height: 535px;
+            margin: 0 auto;
         }
     }
 
@@ -140,10 +145,10 @@
         &:not(:last-of-type){
             margin-bottom: 4rem;
         }
-        .active.c-question.c-lamp::before{
+        .active .c-question .c-lamp::before{
             background: base.$pink;
         }
-        .active.c-anser{
+        .active .c-anser{
             height: auto;
             padding: 48px 60px 40px 40px;
         }
@@ -170,7 +175,8 @@
     }
 
     .p-headOver{
-        height: 473px;
+        width: 69.5%;
+        height: auto;
     }
 
     .p-comparison{
@@ -178,9 +184,86 @@
             width: 80.8%;
             margin: 0 auto 8rem;
         }
-        &__vertical{
+        &__vertical:nth-child(2){
             width: 89.1%;
             margin: 0 auto 8rem;
+            .chart_1{
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
         }
+        &__vertical:nth-child(3){
+            width: 100%;
+            .chart_2{
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .p-flow__single{
+        padding-top: 13.5%;
+    }
+
+    .p-headEasy{
+        width: 93.7%;
+    }
+
+    .p-headFaq{
+        width: 54.5%;
+        // &::before{
+        //     top: 1.3rem;
+        //     left: 2px;
+        // }
+        // &::after{
+        //     top: 1.5rem;
+        // }
+    }
+
+    .p-footer-apply{
+        width: 69.8%;
+    }
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(sp) ********************/ 
+/***************************************************************/
+@include mixin.mq(sp){
+    .p-headOver{
+        width: 87.9%;
+    }
+    .p-comparison__beside{
+        width: 87.5%;
+        img{
+            width: 65.1%;
+            height: auto;
+        }
+    }
+    .p-comparison__vertical:nth-child(2),
+    .p-comparison__vertical:nth-child(3){
+        width: 100%;
+        h3 img{
+            width: 79%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+    .p-headEasy{
+        p{
+            font-size: 1.4rem;        
+        }
+    }
+
+    .p-card{
+        width: 273px;
+        img{
+            object-fit: cover;
+        }
+    }
+    .p-headFaq{
+        width: 62.2%;
     }
 }

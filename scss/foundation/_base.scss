@@ -54,6 +54,12 @@ body{
     .pc_flex{
         display: flex;
     }
+    .pc_tab_flex{
+        display: flex;
+    }
+    .sp_flex{
+        display: none;
+    }
 
     h2{
         font-size: $font42;
@@ -123,6 +129,12 @@ body{
         .pc_flex{
             display: none;
         }
+        .pc_tab_flex{
+            display: flex;
+        }
+        .sp_flex{
+            display: none;
+        }
     }
 }
 
@@ -147,6 +159,15 @@ body{
         }
         .tab_sp{
             display: block;
+        }
+        .pc_flex{
+            display: none;
+        }
+        .pc_tab_flex{
+            display: none;
+        }
+        .sp_flex{
+            display: flex;
         }
 
     }

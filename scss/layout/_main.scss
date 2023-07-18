@@ -62,7 +62,7 @@
 }
 
 .l-faq{
-    padding: 80px 0 120px;
+    padding: 44px 0 144px;
     &__inner{
         margin: 0 auto;
         width: 860px;
@@ -77,12 +77,15 @@
 @include mixin.mq(tab){
     .l-overview{
         padding: 74px 0 60px;
+        &__inner{
+            width: 100%;
+        }
     }
 
     .l-feature{
         padding: 43px 0 100px;
         &__inner{
-            width: 93.9%;
+            width: 94%;
         }
     }
     .l-comparison{
@@ -91,6 +94,48 @@
             width: 84.9%;
         }
     }
+    .l-flow{
+        &__inner{
+            width: 77.1%;
+        }
+    }
+    .l-easy{
+        padding: 60px 0;
+        &__inner{
+            width: 93.8%;
+        }
+    }
+    .l-faq{
+        padding-top: 24px;
+        &__inner{
+            width: 83.9%;
+        }
+    }
 }
 
 
+
+/***************************************************************/
+/*********************** メディアクエリ(sp) ********************/ 
+/***************************************************************/
+@include mixin.mq(sp){
+    .l-overview{
+        padding: 72px 0 60px;
+    }
+    .l-apply__inner{
+        width: 87.2%;
+    }
+    .l-comparison__inner{
+        width: 94.3%;
+    }
+    .l-flow__inner{
+        width: 93.5%;
+    }
+    .l-faq__inner{
+        width: 93.5%;
+    }
+    #footerInner{
+        gap: 4rem;
+        margin-bottom: 4.8rem;
+    }
+}

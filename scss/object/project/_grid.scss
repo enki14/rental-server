@@ -10,10 +10,14 @@
 }
 
 .footerBtn{
-    padding: 40px 60px;
+    gap: 0;
+    // 左右のpaddingを少なくした分space-araoundの両端の余白で調整
+    padding: 40px 16px;
+    justify-content: center;
     background: base.$lightBlue;
     border: 2px solid base.$mosBlue;
     flex-wrap: wrap;
+    gap: 40px 96px;
     .p-btnArea__single{
         text-align: center;
     }
@@ -158,9 +162,9 @@
 
 .p-columns{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    row-gap: 6.4rem;
+    gap: 6.4rem 4rem;
 }
 
 .p-logoArea{
@@ -173,6 +177,7 @@
         margin: 0 auto;
     }
 }
+
 
 
 /***************************************************************/
@@ -197,4 +202,68 @@
         margin: 0 auto;
         justify-content: center;
     }
+
+    .p-logoArea{
+        display: flex;
+        gap: 6.4rem;
+        justify-content: center;
+        width: auto;
+        padding-bottom: 0;
+    }
+
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(sp) ********************/ 
+/***************************************************************/
+@include mixin.mq(sp){
+    .headerBtn{
+        width: 94.3%;
+    }
+
+    .p-overview__table table tbody tr{
+        th{
+            line-height: 1.4rem;
+        }
+        td{
+            line-height: 1.8rem;
+        }
+    }
+
+    .p-feature{
+        width: 81.8%;
+        img{
+            width: 266px;
+        }
+    }
+
+    .contentBtn{
+        .p-btnArea__single{
+            margin-bottom: 5.4rem;
+            &:nth-child(1){
+                &::before{
+                    width: 70px;
+                    height: 54.4px;
+                    left: 8.7%;
+                }
+                &::after{
+                    width: 70px;
+                    height: 52.5px;
+                    right: 10.2%;
+                }
+            }
+        }
+    
+    }
+
+    .p-columns{
+        gap: 6.4rem
+    }
+
+    .p-logoArea{
+        flex-wrap: wrap;
+        padding-bottom: 0;
+    }
+
 }

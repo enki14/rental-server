@@ -69,6 +69,8 @@
     height: 107px;
 }
 
+
+
 .c-logo{
     display: block;
     padding-top: 1.6rem;
@@ -147,20 +149,82 @@
 /***************************************************************/
 @include mixin.mq(tab){
     .c-overDesc{
-        top: 148px;
+        position: relative;
+        margin-top: 8rem;
+        padding-bottom: 1.6rem;
+        height: auto;
         img{
-            width: 88.3%;
+            position: relative;
+            width: 100%;
+            height: auto;
             left: 0;
             right: 0;
             margin: auto;
+            aspect-ratio: 712/325;
         }
     } 
     .c-featDesc{
+        height: auto;
+        padding-bottom: 2.4rem;
         img{
             position: relative;
-            width: 88.3%;
+            width: 88.5%;
+            height: auto;
             left: 0;
             object-fit: contain;
+            aspect-ratio: 852/253;
         }
     }
+    .c-logo{
+        margin-bottom: 0;
+
+    }
+}
+
+/***************************************************************/
+/*********************** メディアクエリ(sp) ********************/ 
+/***************************************************************/
+@include mixin.mq(sp){
+    .c-overDesc{
+        margin-top: 5rem;
+        img{
+            aspect-ratio: auto;
+            width: 106.8%;
+            left: -6.8%;
+            right: auto;
+        }
+    } 
+
+
+    .c-featDesc{
+        margin-top: 6.4rem;
+        img{
+            aspect-ratio: auto;
+            width: 92.7%;
+        }
+    }
+
+    .c-rental{
+        width: 103px;
+        height: 21px;
+    }
+    .c-vps{
+        width: 35px;
+        height: 21px;
+    }
+    .c-heiper{
+        width: 101px;
+        height: 21px;
+    }
+    .c-gaming{
+        width: 131px;
+        height: 21px;
+    }
+    .c-logo{
+        width: 255px;
+        img{
+            height: auto;
+        }
+    }
+
 }
