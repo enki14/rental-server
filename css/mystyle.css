@@ -380,8 +380,7 @@ body .mb-6 {
 }
 
 .headerBtn {
-  position: absolute;
-  bottom: -159px;
+  position: relative;
   gap: 60px;
   width: 640px;
   margin: 0 auto;
@@ -563,7 +562,6 @@ body .mb-6 {
   .headerBtn {
     width: 517px;
     gap: 2.4rem;
-    bottom: -134px;
   }
   .p-overview__table {
     width: 94.7%;
@@ -605,6 +603,10 @@ body .mb-6 {
 @media all and (max-width: 744px) {
   .headerBtn {
     width: 94.3%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .p-overview__table table tbody tr th {
     line-height: 1.4rem;
@@ -618,7 +620,7 @@ body .mb-6 {
   .p-feature img {
     width: 266px;
   }
-  .contentBtn .p-btnArea__single {
+  .contentBtn .p-btnArea__single:nth-child(1) {
     margin-bottom: 5.4rem;
   }
   .contentBtn .p-btnArea__single:nth-child(1)::before {
@@ -639,6 +641,32 @@ body .mb-6 {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
     padding-bottom: 0;
+  }
+}
+/***************************************************************/
+/*********************** メディアクエリ(sps) ********************/
+/***************************************************************/
+@media all and (max-width: 430px) {
+  .headerBtn {
+    position: relative;
+    gap: 2rem;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .p-feature img {
+    width: 81%;
+  }
+  #contentBtn_1::before,
+  #contentBtn_2::before {
+    display: none;
+  }
+  #contentBtn_1::after,
+  #contentBtn_2::after {
+    display: none;
+  }
+  .contentBtn .p-btnArea__single:nth-child(1) {
+    margin-bottom: 4rem;
   }
 }
 .c-navLogo {
@@ -853,6 +881,13 @@ body .mb-6 {
 /*********************** メディアクエリ(sp) ********************/
 /***************************************************************/
 @media all and (max-width: 744px) {
+  .c-navLogo {
+    width: 27.5%;
+  }
+  .c-navLogo a img {
+    width: 100%;
+    height: auto;
+  }
   .c-overDesc {
     margin-top: 5rem;
   }
@@ -890,6 +925,21 @@ body .mb-6 {
   }
   .c-logo img {
     height: auto;
+  }
+}
+/***************************************************************/
+/*********************** メディアクエリ(sps) ********************/
+/***************************************************************/
+@media all and (max-width: 430px) {
+  .c-navLogo {
+    width: 60%;
+  }
+  .c-logo {
+    width: 100%;
+    text-align: center;
+  }
+  .c-logo img {
+    width: 70%;
   }
 }
 .c-applyBtn {
@@ -1001,6 +1051,7 @@ body .mb-6 {
   position: absolute;
   top: 3.83rem;
   left: 4rem;
+  background-size: contain;
 }
 .c-question p {
   width: 706px;
@@ -1025,6 +1076,8 @@ body .mb-6 {
   background: #BBE5E5;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .c-anser {
@@ -1051,6 +1104,7 @@ body .mb-6 {
   position: absolute;
   top: 4.8rem;
   left: 4rem;
+  background-size: contain;
 }
 .c-anser p {
   width: 100.4%;
@@ -1091,6 +1145,48 @@ body .mb-6 {
     width: 60%;
     height: auto;
     aspect-ratio: 1;
+  }
+}
+/***************************************************************/
+/*********************** メディアクエリ(sps) ********************/
+/***************************************************************/
+@media all and (max-width: 430px) {
+  .tabApply-btn {
+    padding: 14px 60px 18px;
+  }
+  .tabSupo-btn {
+    padding: 14px 32px 18px;
+  }
+  .c-question {
+    padding: 16px 20px;
+    z-index: 3;
+  }
+  .c-question::before {
+    top: 2rem;
+    left: 2.6rem;
+  }
+  .c-question p {
+    width: 88%;
+  }
+  .c-anser::before {
+    top: 5.2rem;
+    left: 2.4rem;
+  }
+  .cApply-btn {
+    padding: 20px 0 24px;
+    width: 70%;
+  }
+  .cSupo-btn {
+    padding: 20px 0;
+    width: 60%;
+  }
+  .fApply-btn {
+    padding: 20px 0 24px;
+    width: 100%;
+  }
+  .fSupo-btn {
+    padding: 20px 0;
+    width: 100%;
   }
 }
 .c-navTitle img {
@@ -1248,6 +1344,18 @@ body .mb-6 {
 /*********************** メディアクエリ(sp) ********************/
 /***************************************************************/
 @media all and (max-width: 744px) {
+  .c-navTitle {
+    width: 43.3%;
+  }
+  .c-navTitle img {
+    width: 100%;
+    height: auto;
+  }
+  .c-mainTitle img {
+    width: 77.8%;
+    height: auto;
+    margin: 0 auto;
+  }
   .c-h2::before {
     width: 120px;
   }
@@ -1273,6 +1381,42 @@ body .mb-6 {
   }
   .c-fukidashi {
     width: 66.4%;
+  }
+}
+/***************************************************************/
+/*********************** メディアクエリ(sps) ********************/
+/***************************************************************/
+@media all and (max-width: 430px) {
+  .c-navTitle {
+    display: none;
+  }
+  .c-mainTitle img {
+    width: 100%;
+  }
+  .c-h2 {
+    display: block;
+  }
+  .c-h2::before {
+    width: 100px;
+    height: 4px;
+    border-radius: 2px;
+    bottom: -2.2rem;
+  }
+  .c-h2::after {
+    position: relative;
+    width: 100%;
+    left: 0;
+    height: 4px;
+    border-radius: 2px;
+    bottom: -2.2rem;
+  }
+  .h2_sec {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .c-fukidashi {
+    top: -3rem;
+    left: 2.4rem;
   }
 }
 .c-navSpan {
@@ -1316,6 +1460,9 @@ body .mb-6 {
   line-height: 3.2rem;
   text-align: center;
   margin: 2.4rem 0;
+}
+.c-band p br {
+  display: none;
 }
 
 .bandFooter {
@@ -1386,6 +1533,7 @@ body .mb-6 {
   font-size: 36px;
   font-weight: 400;
   line-height: 36px;
+  margin-bottom: 1.4rem;
 }
 
 .c-copyright {
@@ -1419,14 +1567,23 @@ body .mb-6 {
 /*********************** メディアクエリ(sp) ********************/
 /***************************************************************/
 @media all and (max-width: 744px) {
-  .buttonSpan {
-    font-size: 1.8rem;
-  }
   .c-band {
     padding: 1.6rem 0 2rem;
   }
   .c-band p {
-    line-height: 2.5rem;
+    line-height: 180%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    margin: 2.6% 0;
   }
   .c-flowDesc {
     padding: 72px 44px 40px 40px;
@@ -1453,9 +1610,29 @@ body .mb-6 {
     line-height: 1.8;
     margin-bottom: 1rem;
   }
+  .buttonSpan {
+    font-size: clamp(1.4rem, 0.852rem + 1.275vw, 1.8rem);
+  }
   .bandFooter p {
     margin: 8px 0;
-    line-height: 1;
+    line-height: 1.8;
+  }
+}
+/***************************************************************/
+/*********************** メディアクエリ(sps) ********************/
+/***************************************************************/
+@media all and (max-width: 430px) {
+  .buttonSpan {
+    margin-bottom: 8px;
+  }
+  .c-flowDesc {
+    padding: 40px 16px 32px 16px;
+  }
+  .c-flowDesc::after {
+    top: -1.6rem;
+  }
+  .c-band p br {
+    display: block;
   }
 }
 .p-service {
@@ -1615,7 +1792,6 @@ body .mb-6 {
       -ms-flex-align: center;
           align-items: center;
   gap: 4px;
-  width: 59.3%;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 3.2rem;
@@ -1710,10 +1886,14 @@ body .mb-6 {
 .p-faq__single:not(:last-of-type) {
   margin-bottom: 4rem;
 }
-.p-faq__single .active .c-question .c-lamp::before {
+
+.active .c-question .c-lamp::before {
   background: #FFB7C8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
-.p-faq__single .active .c-anser {
+
+.active .c-anser {
   height: auto;
   padding: 48px 60px 40px 40px;
 }
@@ -1729,7 +1909,7 @@ body .mb-6 {
 @media all and (max-width: 1024px) {
   .p-hArticle {
     width: 579px;
-    top: 43%;
+    top: 55%;
   }
   .p-headOver {
     width: 69.5%;
@@ -1764,9 +1944,6 @@ body .mb-6 {
   .p-headEasy {
     width: 93.7%;
   }
-  .p-headFaq {
-    width: 54.5%;
-  }
   .p-footer-apply {
     width: 69.8%;
   }
@@ -1775,6 +1952,10 @@ body .mb-6 {
 /*********************** メディアクエリ(sp) ********************/
 /***************************************************************/
 @media all and (max-width: 744px) {
+  .p-hArticle {
+    width: 100%;
+    top: 57%;
+  }
   .p-headOver {
     width: 87.9%;
   }
@@ -1803,10 +1984,59 @@ body .mb-6 {
     width: 273px;
   }
   .p-card img {
+    height: auto;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .p-headFaq {
-    width: 62.2%;
+  .p-card .card_text {
+    padding: 2.2rem;
+  }
+  .p-footer-apply {
+    width: 67.7%;
+  }
+}
+/***************************************************************/
+/*********************** メディアクエリ(sps) ********************/
+/***************************************************************/
+@media all and (max-width: 430px) {
+  .p-hArticle {
+    top: 57%;
+  }
+  .p-comparison__beside {
+    width: 100%;
+  }
+  .p-comparison__beside .ttlDesc_beside h3 {
+    width: 100%;
+  }
+  .p-comparison__beside .ttlDesc_beside h3 img {
+    width: 100%;
+  }
+  .p-comparison__vertical:nth-child(2),
+  .p-comparison__vertical:nth-child(3) {
+    width: 100%;
+  }
+  .p-comparison__vertical:nth-child(2) h3 img,
+  .p-comparison__vertical:nth-child(3) h3 img {
+    width: 100%;
+  }
+  .p-headFaq::before {
+    margin-right: 5rem;
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  .p-headFaq::after {
+    margin-left: 5rem;
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  .active .c-anser {
+    height: auto;
+    padding: 48px 32px 28px 20px;
+  }
+  .p-card .card_text {
+    height: auto;
+  }
+  .p-card .card_text p {
+    font-size: 1.4rem;
   }
 }

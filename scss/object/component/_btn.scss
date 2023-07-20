@@ -99,6 +99,7 @@
         position: absolute;
         top: 3.83rem;
         left: 4rem;
+        background-size: contain;
     }
 
     p{
@@ -124,6 +125,7 @@
             border-radius: 15px;
             background: base.$lightBlue;
             transform: translate(-50%, -50%);
+            transition: .5s;
         }
     }
 
@@ -142,12 +144,13 @@
     border-radius: 0px 0px 20px 20px;
     border: 2px solid base.$lightBlue;
     padding: 0px 60px 0px 40px;  
-
+    // transition: .5s;
     &::before{
         @include mixin.background_url('pc/anser.svg', 32px, 20.4px);
         position: absolute;
         top: 4.8rem;
         left: 4rem;
+        background-size: contain;
     }
     p{
         width: 100.4%;
@@ -202,4 +205,53 @@
         }
     
     } 
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(sps) ********************/ 
+/***************************************************************/
+@include mixin.mq(sps){
+    .tabApply-btn{
+        padding: 14px 60px 18px;
+    }
+    .tabSupo-btn{
+        padding: 14px 32px 18px;
+    }
+    .c-question{
+        padding: 16px 20px;
+        z-index: 3;
+        &::before{
+            top: 2rem;
+            left: 2.6rem;        
+        }
+        p{
+            width: 88%;
+        }
+    } 
+    .c-anser{
+        &::before{
+            top: 5.2rem;
+            left: 2.4rem;       
+        }
+    }
+    
+    .cApply-btn{
+        padding: 20px 0 24px;
+        width: 70%;
+    }
+    .cSupo-btn{
+        padding: 20px 0;
+        width: 60%;
+    }
+
+    .fApply-btn{
+        padding: 20px 0 24px;
+        width: 100%;
+    }
+    .fSupo-btn{
+        padding: 20px 0;
+        width: 100%;
+    }
+
 }

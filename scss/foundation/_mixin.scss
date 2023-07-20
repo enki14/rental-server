@@ -3,6 +3,7 @@
 
 // mixinでメディアクエリを管理する
 $breakpoint: (
+    sps: 'all and (max-width: 430px)',
     sp: 'all and (max-width: 744px)',
     tab: 'all and (max-width: 1024px)'
 );

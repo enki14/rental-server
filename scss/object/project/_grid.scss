@@ -25,8 +25,7 @@
 }
 
 .headerBtn{
-    position: absolute;
-    bottom: -159px;
+    position: relative;
     gap: 60px;
     width: 640px;
     margin: 0 auto;
@@ -187,7 +186,6 @@
     .headerBtn{
         width: 517px;
         gap: 2.4rem;
-        bottom: -134px;
     }
     .p-overview__table{
         width: 94.7%;
@@ -220,6 +218,7 @@
 @include mixin.mq(sp){
     .headerBtn{
         width: 94.3%;
+        justify-content: center;
     }
 
     .p-overview__table table tbody tr{
@@ -240,8 +239,8 @@
 
     .contentBtn{
         .p-btnArea__single{
-            margin-bottom: 5.4rem;
             &:nth-child(1){
+                margin-bottom: 5.4rem;
                 &::before{
                     width: 70px;
                     height: 54.4px;
@@ -266,4 +265,32 @@
         padding-bottom: 0;
     }
 
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(sps) ********************/ 
+/***************************************************************/
+@include mixin.mq(sps){
+    .headerBtn{
+        position: relative;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+    }
+    .p-feature img{
+        width: 81%;
+    }
+    #contentBtn_1,
+    #contentBtn_2{
+        &::before{
+            display: none;
+        }
+        &::after{
+            display: none;
+        }
+    }
+    .contentBtn .p-btnArea__single:nth-child(1){
+        margin-bottom: 4rem;
+    }
 }

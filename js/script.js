@@ -5,10 +5,11 @@
 const shingleDown = (el) => {
     el.style.height = 'auto'; // 初期値が0にならないように一旦autoにする
     let h = el.offsetHeight; // 要素の高さを取得
-    el.style.offsetHeight = h + 'px';
+    el.style.height = h + 'px';
     el.animate([ // animate(keyframes, options)
         { height: '0px'},
-        { height: h + 'px'}
+        { height: h + 'px'},
+        // { transition: 'height 0.3s ease-in-out'}
     ], {
         duration: 300,
     });
@@ -18,6 +19,9 @@ const shingleDown = (el) => {
 
 const shingleUp = (el) => {
     el.style.height = 0;
+    // el.animate([
+    //     {transition: 'height 0.3s ease-in-out'},
+    // ]);
 }
 
 
@@ -49,11 +53,3 @@ acoShiBtns.forEach((acoShiBtn, index) => {
     });
 });
 
-
-// window.addEventListener('resize', function() {
-//     var element = document.querySelector('.p-headOver');
-//     var width = element.offsetWidth;
-//     var aspectRatio = 712/473;
-//     var height = width / aspectRatio;
-//     element.style.height = height + 'px';
-//   });

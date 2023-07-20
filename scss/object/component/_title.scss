@@ -170,6 +170,18 @@
 /*********************** メディアクエリ(sp) ********************/ 
 /***************************************************************/
 @include mixin.mq(sp){
+    .c-navTitle{
+        width: 43.3%;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    .c-mainTitle img{
+        width: 77.8%;
+        height: auto;
+        margin: 0 auto;
+    }
     .c-h2{
         &::before{
             width: 120px;
@@ -201,5 +213,43 @@
 
     .c-fukidashi{
         width: 66.4%;
+    }
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(sps) ********************/ 
+/***************************************************************/
+@include mixin.mq(sps){
+    .c-navTitle{
+        display: none;
+    }
+    .c-mainTitle img{
+        width: 100%;
+    }
+    .c-h2{
+        display: block;
+        &::before{
+            width: 100px;
+            height: 4px;
+            border-radius: 2px;
+            bottom: -2.2rem;
+        }
+        &::after{
+            position: relative;
+            width: 100%;
+            left: 0;
+            height: 4px;
+            border-radius: 2px;
+            bottom: -2.2rem;
+        }
+    }
+    .h2_sec{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .c-fukidashi{
+        top: -3rem;
+        left: 2.4rem;
     }
 }

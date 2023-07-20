@@ -50,7 +50,6 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
-    width: 59.3%;
     margin: 0 auto;
     text-align: center;
     margin-bottom: 3.2rem;
@@ -145,17 +144,18 @@
         &:not(:last-of-type){
             margin-bottom: 4rem;
         }
-        .active .c-question .c-lamp::before{
-            background: base.$pink;
-        }
-        .active .c-anser{
-            height: auto;
-            padding: 48px 60px 40px 40px;
-        }
-        
     }
-    
 }
+.active .c-question .c-lamp::before{
+    background: base.$pink;
+    transition: .5s;
+}
+.active .c-anser{
+    height: auto;
+    padding: 48px 60px 40px 40px;
+    // transition: .5s;
+}
+
 
 
 .p-footer-apply{
@@ -171,7 +171,7 @@
 @include mixin.mq(tab){
     .p-hArticle{
         width: 579px;
-        top: 43%;
+        top: 55%;
     }
 
     .p-headOver{
@@ -211,17 +211,6 @@
         width: 93.7%;
     }
 
-    .p-headFaq{
-        width: 54.5%;
-        // &::before{
-        //     top: 1.3rem;
-        //     left: 2px;
-        // }
-        // &::after{
-        //     top: 1.5rem;
-        // }
-    }
-
     .p-footer-apply{
         width: 69.8%;
     }
@@ -232,6 +221,10 @@
 /*********************** メディアクエリ(sp) ********************/ 
 /***************************************************************/
 @include mixin.mq(sp){
+    .p-hArticle{
+        width: 100%;
+        top: 57%;
+    }
     .p-headOver{
         width: 87.9%;
     }
@@ -260,10 +253,60 @@
     .p-card{
         width: 273px;
         img{
+            height: auto;
             object-fit: cover;
+        }
+        .card_text{
+            padding: 2.2rem;
+        }
+    }
+    .p-footer-apply{
+        width: 67.7%;
+    }
+}
+
+
+/***************************************************************/
+/*********************** メディアクエリ(sps) ********************/ 
+/***************************************************************/
+@include mixin.mq(sps){
+    .p-hArticle{
+        top: 57%;
+    }
+    .p-comparison__beside{
+        width: 100%;
+        .ttlDesc_beside h3{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        } 
+    }
+    .p-comparison__vertical:nth-child(2),
+    .p-comparison__vertical:nth-child(3){
+        width: 100%;
+        h3 img{
+            width: 100%;
         }
     }
     .p-headFaq{
-        width: 62.2%;
+        &::before{
+            margin-right: 5rem;
+            transform: rotate(-30deg);
+        }
+        &::after{
+            margin-left: 5rem;
+            transform: rotate(30deg);
+        }
+    }
+    .active .c-anser{
+        height: auto;
+        padding: 48px 32px 28px 20px;
+    }
+    .p-card .card_text{
+        height: auto;
+        p{
+            font-size: 1.4rem;
+        }    
     }
 }
